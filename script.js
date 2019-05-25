@@ -20,6 +20,12 @@
 
     Los nombres de variables pueden arrancar con _ $ o cualquier letra, despues del primer caracter
     puede ir cualquier otro caracter
+
+    Console -> object - nos da funciones de logueo en consola de desarrollo
+
+    location -> object 
+
+    history
  */
 
  let nombre = "Florencia"
@@ -55,3 +61,46 @@
     console.log(persona)
     
  }  
+
+ console.clear()
+ let dos= document.getElementById("item2")
+ console.dir(dos)
+ //hago console DIR y no console LOG asi puedo ver la variable 2 como objeto
+ //si hago console log veo la etiquiet de html!
+ let lis = document.getElementsByTagName("li")
+ let tres = document.querySelector("#item2")
+
+ //como creo un NODO
+ let p = document.createElement("p")
+ p.innerText = "Mi nuevo texto"
+ p.id = "nuevo"
+ p.className = "item"
+
+ console.log(p)
+
+ //agregar nodos al DOM 
+ // Desde un nodo cualquiera que yo ya tenga seleccionado
+ // nodo.appendChild(NodoNuevo) -> esto inserta el nodo nuevo como ultimo hijo de nodo
+//
+let body = document.querySelector("body")
+body.appendChild(p)
+ // Nodo.insertBefore(NodoNuevo, NodoRef)
+ //
+
+ let li2 = document.createElement("li")
+ li2.innerText = "soy el nuevo primer elemento!"
+
+ let ul = document.querySelector("ul")
+ let li3 = document.querySelector("#item1")
+ ul.insertBefore(li2, li3)
+
+ let NuevoUl = document.createElement("ul")
+ for (let index = 0; index < 5; index++) {
+    
+   let liNUEVO = document.createElement("li")
+   NuevoUl.appendChild(li)
+   liNUEVO.innerText = "Nueo texto" + i
+    
+ }
+
+ body.appendChild(NuevoUl)
