@@ -42,7 +42,7 @@ function PreguntarUsuarioSiQuiereAbandonarPag(e) {
     nuevoDiv.appendChild(btn1)
     btn1.addEventListener("click", redirigirUsuario)
     function redirigirUsuario() {
-        window.location.href = "http://google.com"
+        window.location.href = a.href
     }   
 
     let btn2 = document.createElement("button")
