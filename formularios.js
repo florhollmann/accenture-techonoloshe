@@ -32,17 +32,20 @@ evento
 change : se dispara cuando un control de formulario cambia su valor
 */
 
+let body = document.querySelector("body")
+let textarea = document.querySelector("textarea")
 let form = document.querySelector("form")
 let input = document.querySelector("input")
 let nombre = document.querySelector("#nombre")
 let select = document.querySelector("#Nac")
 let option = document.querySelectorAll("option")
+let divNac = document.getElementById("nacionalidad")
+let label = document.querySelector("label")
 let paises = {
     ar : ["Buenos Aires", "La Pampa"],
     ve : ["Margarita", "Caracas"],
     ch : ["Beijing", "Shangai"]
 }
-
 form.addEventListener("change", agregoProvincias)
 
 function agregoProvincias(e) {
@@ -58,13 +61,29 @@ function agregoProvincias(e) {
         document.body.appendChild(p)
         p.id = "parrafo"
         p.innerText = "Tiene que seleccionar una opcion"
-    }   
+        form.insertBefore(p, divNac)
+    }
+    else
+    {   
+        let selectCreado = document.createElement("select");
+
+        for (let i = 0; i < provinciaDePaises.length; i++) 
+        {
+            let opcionCreada = document.createElement("option");                    
+            opcionCreada.innerText = provinciaDePaises[i]
+            selectCreado.appendChild(opcionCreada)
+        }
+        divNac.appendChild(selectCreado)
+
+        
+
+        
+    }
+
 }
 
 
-
 /*
-
     opcionElegida = paises[select]
     console.log(opcionElegida)
 1) Seleccionar el select
